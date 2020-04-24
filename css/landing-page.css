@@ -1,7 +1,12 @@
+/*общие настройки*/
 body {
   font-family: 'Oswald', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/*настройка текстовых заголовков*/
 h1,
 h2,
 h3,
@@ -12,6 +17,7 @@ h6 {
   font-weight: bold;
 }
 
+/* шапка сайта */
 header.masthead {
   position: relative;
   background-color: #343a40;
@@ -19,6 +25,13 @@ header.masthead {
   background-size: cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
+  letter-spacing: 2px;
+  height: 100vh;
+}
+
+header.masthead .container {
+  position: relative;
+  top: 50%;
 }
 
 header.masthead .overlay {
@@ -32,7 +45,15 @@ header.masthead .overlay {
 }
 
 header.masthead h1 {
-  font-size: 2rem;
+  animation-name: fade-animation;
+  animation-duration: 4s;
+}
+#scroll-btn {
+  animation-name: fade-animation;
+  animation-duration: 5s;
+}
+#scroll-btn:hover {
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
@@ -45,6 +66,15 @@ header.masthead h1 {
   }
 }
 
+@keyframes fade-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Достопримечательности */
 .showcase .showcase-text {
   padding: 3rem;
 }
@@ -54,67 +84,44 @@ header.masthead h1 {
   background-size: cover;
 }
 
+.showcase a {
+  color: darkslateblue;
+  text-decoration: none;
+}
+
+.showcase a:hover h2 {
+  text-decoration: underline;
+}
+
 @media (min-width: 768px) {
   .showcase .showcase-text {
     padding: 7rem;
   }
 }
 
+/*картинка ключевых моментов*/
 .features-icons {
   padding-top: 7rem;
   padding-bottom: 7rem;
 }
 
-.features-icons .features-icons-item {
-  max-width: 20rem;
-}
-
-.features-icons .features-icons-item .features-icons-icon {
-  height: 7rem;
-}
-
-.features-icons .features-icons-item .features-icons-icon i {
-  font-size: 4.5rem;
-}
-
-.features-icons .features-icons-item:hover .features-icons-icon i {
-  font-size: 5rem;
-}
-
-.testimonials {
+/*Знаменитые люди*/
+.peoples {
   padding-top: 7rem;
   padding-bottom: 7rem;
 }
 
-.testimonials .testimonial-item {
+.peoples .people-item {
   max-width: 18rem;
 }
 
-.testimonials .testimonial-item img {
+.peoples .people-item img {
   max-width: 12rem;
   box-shadow: 0px 5px 5px 0px #adb5bd;
 }
 
-.call-to-action {
-  position: relative;
-  background-color: #343a40;
-  background: url("../img/bg-masthead.jpg") no-repeat center center;
-  background-size: cover;
-  padding-top: 7rem;
-  padding-bottom: 7rem;
-}
-
-.call-to-action .overlay {
-  position: absolute;
-  background-color: #212529;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0.3;
-}
-
+/*подвал сайта*/
 footer.footer {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
